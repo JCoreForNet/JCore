@@ -13,6 +13,7 @@ namespace JCore
     {
         public Startup(IConfiguration configuration)
         {
+            //testing for pull request to GitHub
             Configuration = configuration;
         }
 
