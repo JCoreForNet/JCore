@@ -10,6 +10,7 @@ namespace JCore.Controllers
     {
         public IActionResult Index()
         {
+            //Try to upload to GitHub in home again by JakeChan
             return View();
         }
     }
