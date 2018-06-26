@@ -12,6 +12,7 @@ namespace JCore.Controllers
         {
             //Try to upload to GitHub in home again by JakeChan
             return View();
+            //throw new Exception("Exception Page!");
         }
     }
 }

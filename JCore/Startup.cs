@@ -34,16 +34,27 @@ namespace JCore
             if (env.IsDevelopment())
             {
                 app.UseBrowserLink();
+
+                //Development environment error handle
                 app.UseDeveloperExceptionPage();
             }
             else
             {
-                app.UseExceptionHandler("/Error");
+                //Environment setup by "Properties -> launchSetting.json"
+                //Production environment error handle
+                app.UseExceptionHandler("/Shared/Error");
             }
 
             app.UseStaticFiles();
 
-            app.UseMvc();
+            //app.UseMvc();
+            //Use MVC and setting the default router
+            app.UseMvc(routes =>
+            {
+                routes.MapRoute(
+                    name: "default",
+                    template: "{controller=Home}/{action=Index}/{id?}");
+            });
 
             app.UseMvcWithDefaultRoute();
         }
